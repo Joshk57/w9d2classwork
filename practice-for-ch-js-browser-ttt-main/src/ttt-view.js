@@ -4,7 +4,7 @@ class View {
     this.el = el
     this.setupBoard(el);
     // el.appendChild(ul)
-    
+    this.handleClick(el)
 
   }
   
@@ -25,20 +25,34 @@ class View {
   }
   
   handleClick(e) {
-    let pos = e.target.getAttribute('data-pos');
-    let [row,col] = pos.split(',');
-    let click_pos = el.addEventListener("click", this.game.playMove(pos))
-
+    const el = e.target;
+    console.log(el)
+    if (el.nodeName === "li") {
+      this.makeMove(el)
+    }
     
   }
 
   makeMove(square) {
-    
+      const pos = JSON.parse(square.dataset.pos);
+      const currentPlayer = this.game.currentPlayer;
+  
+      if ("person clicks") {
+        "we get the pos"
+        this.game.playMove(pos)
+      } else {
+        alert("This " + e.msg.toLowerCase());
+      }
+  
+      square.classList.add(currentPlayer);
+  
+      if (this.game.isOver()) this.handleGameOver();
 
   }
 
   
   handleGameOver() {
+    
   }
 }
 
