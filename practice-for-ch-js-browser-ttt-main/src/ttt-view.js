@@ -2,7 +2,7 @@ class View {
   constructor(game, el) {
     this.game = game
     this.el = el
-    this.setupBoard();
+    this.setupBoard(el);
     // el.appendChild(ul)
     
 
@@ -21,13 +21,22 @@ class View {
     }
 
     document.querySelector(".ttt").appendChild(ul)
+    this.handleClick(el);
   }
   
   handleClick(e) {
+    let pos = e.target.getAttribute('data-pos');
+    let [row,col] = pos.split(',');
+    let click_pos = el.addEventListener("click", this.game.playMove(pos))
+
+    
   }
 
   makeMove(square) {
+    
+
   }
+
   
   handleGameOver() {
   }
