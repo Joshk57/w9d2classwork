@@ -1,0 +1,22 @@
+/* Your code here */
+
+ul {
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    border: 5px solid black;
+}
+
+li {
+    display: list-item;
+    height: 90px;
+    width: 90px;
+    border: 5px solid black;
+    background: grey;
+
+}
+
+/* li:nth-child(3n) {
+    flex-basis: 100%;
+} */
